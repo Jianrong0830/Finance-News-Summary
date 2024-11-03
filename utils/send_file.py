@@ -13,7 +13,7 @@ file_path = "output/Google快訊-摘要.xlsx"
 sender_email = os.environ.get('GMAIL')
 sender_password = os.environ.get('PASSWORD')
 
-def send_gmail(subject=subject, body=body, file_path=file_path):
+def send_gmail(recipient_email=recipient_email, subject=subject, body=body, file_path=file_path):
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
 

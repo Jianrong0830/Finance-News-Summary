@@ -54,10 +54,12 @@ except Exception as e:
     file_path = "output/Google快訊-摘要(部分).xlsx"
     df.to_excel(file_path, index=False)
     send_gmail(subject="新聞摘要(部分)", body="因中途出錯，只產生部分Google快訊報告 Excel 檔案，請查收。", file_path=file_path)
+    send_gmail(recipient_email="ryanchen0830b@gmail.com", subject="新聞摘要(部分)", body="因中途出錯，只產生部分Google快訊報告 Excel 檔案，請查收。", file_path=file_path)
     print(f"發生錯誤：{e}，已將部分資料儲存至 Google快訊-摘要(部分).xlsx")
 else:
     # 如果無錯誤，儲存完整資料
     file_path = "output/Google快訊-摘要.xlsx"
     df.to_excel(file_path, index=False)
     send_gmail()
+    send_gmail(recipient_email="ryanchen0830b@gmail.com")
     print("資料已成功儲存到 Google快訊-摘要.xlsx")
