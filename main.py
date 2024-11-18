@@ -45,7 +45,7 @@ try:
             print(f"# 生成摘要: {row['網址']}")
             summary = ask_gpt(prompt, row['新聞'])
             df.loc[index, '摘要'] = summary  # 使用 loc 更新 DataFrame 的 "摘要" 欄位
-            time.sleep(10)
+            time.sleep(5)
         else:
             df.loc[index, '摘要'] = "無法摘要"
 
